@@ -1,0 +1,10 @@
+I have a problem in my project when I try to display images from raw type on the display. When I used a raw file find as it is, the display is working properly, but if I try to convert from a png to raw, the display shows only some pixels and nothing else. 
+This is my code
+let raw_image_data = ImageRawLE::new(include_bytes!("../assets/ferris.raw"), 86);
+let ferris = Image::new(&raw_image_data, Point::new(120, 120));
+ 
+loop{
+    ferris.draw(&mut display).unwrap();
+    Timer::after_millis(1).await;
+}
+What should I do?
